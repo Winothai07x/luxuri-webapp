@@ -21,11 +21,20 @@
     />
     <title>Luxeri - Login</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <div id="navbar">
       <h1>Luxeri</h1>
-      <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-bars" onclick="toggleDrawer()"></i>
+    </div>
+    <div class="drawer" id="drawer">
+      <i class="fa-solid fa-bars" onclick="toggleDrawer()"></i>
+      <ul class="menu">
+          <li>Home</li>
+          <li>Team Page</li>
+          <li class="active">Login</li>
+      </ul>
     </div>
     <div id="bg-triangle"></div>
     <div class="container">

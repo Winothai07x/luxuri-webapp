@@ -133,6 +133,47 @@ body {
   background-color: #bcbcbc;
 }
 
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #ccc;
+  box-shadow: unset;
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  i {
+    font-size: 40px;
+    margin: 25px 20px;
+    cursor: pointer;
+  }
+}
+
+.drawer.open {
+  box-shadow: -70px 0px 35px 1px rgba(0, 0, 0, 0.25);
+  right: 0;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #000000;
+}
+
+.menu li {
+  padding: 20px 13px;
+  font-family: Cinzel;
+  font-size: 24px;
+  border-bottom: 1px solid #000;
+}
+
+.menu li.active {
+  background-color: #fff9f9;
+}
+
 @media (max-width: 800px) {
   #navbar {
     height: 90px;
@@ -157,6 +198,7 @@ body {
       position: absolute;
       right: 20px;
       font-size: 40px;
+      cursor: pointer;
     }
   }
 
