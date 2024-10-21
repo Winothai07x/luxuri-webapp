@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font awesome Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Cinzel font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Luxeri - Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="bg-triangle"></div>
+    <div class="container">
+      <div class="left-panel">
+        <i class="fa-solid fa-arrow-left"></i>
+        <h1>Luxeri</h1>
+      </div>
+      <div class="right-panel">
+        <h1>Login</h1>
+        <img src="./assets/user_box.svg" width="200" height="200"></img>
+        <form>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+            />
+          </div>
+          <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
