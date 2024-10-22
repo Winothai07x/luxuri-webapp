@@ -6,31 +6,62 @@ section {
   display: flex;
   flex-direction: row;
   height: calc(100% - 80px);
+}
 
-  main {
-    width: 100%;
-    padding-top: 36px;
+main {
+  width: 100%;
+  padding-top: 36px;
 
-    #add-new-admin {
-      margin-left: auto;
-      width: fit-content;
-      display: flex;
-      gap: 8px;
-      margin-right: 20px;
-      span {
-        font-size: 18px;
-        font-family: Cinzel;
-        font-weight: 400;
-      }
-    }
-
-    /* TODO */
-    #do-here {
-      margin-top: 20px;
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
+  #add-new-admin {
+    margin-left: auto;
+    width: fit-content;
+    display: flex;
+    gap: 8px;
+    margin-right: 20px;
+    span {
+      font-size: 18px;
+      font-family: Cinzel;
+      font-weight: 400;
     }
   }
+}
+
+#admin-table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  width: 100%;
+  font-family: Inter;
+
+  #table-head-row {
+    background-color: #e8e8e8;
+    box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.1);
+
+    th {
+      font-weight: 400;
+      font-size: 22px;
+      padding: 16px 0;
+      text-align: left;
+    }
+  }
+
+  td {
+    padding: 20px 0;
+  }
+
+  tr {
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  tr:hover {
+    background-color: #a7a6a6;
+  }
+}
+
+.profile-pic-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-left: 16px;
 }

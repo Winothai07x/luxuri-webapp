@@ -21,6 +21,12 @@
     font-family: Cinzel;
     font-weight: 400;
     color: #000;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  ul a:hover {
+    background-color: #a59e9e;
   }
 
   ul a.active {
