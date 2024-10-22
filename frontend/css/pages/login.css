@@ -19,7 +19,7 @@ body {
 }
 
 #bg-triangle {
-  background-image: url("/media/images/bg.svg");
+  background-image: url("../../media/images/bg.svg");
   background-size: cover;
   background-repeat: no-repeat;
   right: 0;

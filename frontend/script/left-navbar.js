@@ -1,5 +1,5 @@
 function loadLeftNavbar() {
-  fetch("/partials/left-navbar.html")
+  fetch("../partials/left-navbar.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("left-navbar-placeholder").innerHTML = data;
