@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 60px;
+  border-bottom: 1px solid #000;
+  padding-top: 24px;
+  padding-right: 30px;
+}
+
+.navbar-left h1 {
+  margin: 0;
+}
+
+.navbar-right ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-right ul li {
+  display: inline;
+}
+
+.navbar-right ul li a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #000;
+  font-family: Cinzel;
+}

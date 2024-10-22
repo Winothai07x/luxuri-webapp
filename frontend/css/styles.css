@@ -1,0 +1,12 @@
+@import url("./font.css");
+@import url("./navbar.css");
+
+body {
+  background-color: #f7f7f7;
+}
+
+h1#luxeri-heading {
+  font-family: Cinzel;
+  font-size: 40px;
+  font-weight: 400;
+}
