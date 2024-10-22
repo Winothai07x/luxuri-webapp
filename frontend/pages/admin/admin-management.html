@@ -76,6 +76,48 @@
         <p>ADD</p>
         <i class="fa-solid fa-xmark" onclick="toggleDrawer()"></i>
       </div>
+      <div class="form-container">
+        <form id="admin-form">
+          <div class="form-group picture-group">
+            <label for="picture">Picture:</label>
+            <div class="picture-placeholder"></div>
+            <input type="file" id="picture" name="picture" accept="image/*" />
+          </div>
+
+          <div class="form-group">
+            <label for="admin-id">Admin ID:</label>
+            <input type="text" id="admin-id" name="adminId" required />
+          </div>
+
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <button type="button" id="togglePassword" class="toggle-password">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="tel">Tel:</label>
+            <input type="tel" id="tel" name="tel" required />
+          </div>
+
+          <div class="button-container">
+            <button type="submit">SAVE</button>
+            <button type="reset">DELETE</button>
+          </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>
