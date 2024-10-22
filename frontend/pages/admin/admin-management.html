@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Management</title>
+    <!-- Font awesome Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="../../css/pages/admin-management.css" />
     <script src="../../script/navbar.js"></script>
     <script src="../../script/left-navbar.js"></script>
+    <script src="../../script/script.js"></script>
   </head>
   <body>
     <div id="navbar-placeholder"></div>
     <section>
       <div id="left-navbar-placeholder"></div>
       <main>
-        <div id="add-new-admin">
+        <div id="add-new-admin" onclick="toggleDrawer()">
           <img src="../../media/images/plus.svg" width="45px" height="45px" />
           <span
             >ADD NEW <br />
@@ -31,69 +37,45 @@
           <!-- 1 -->
           <tr>
             <td><div class="profile-pic-placeholder"></div></td>
-            <td>
-                Popo
-            </td>
-            <td>
-                ID-123812323
-            </td>
-            <td>
-              098-257-1234
-            </td>
-            <td>
-              Ploy@gmail.com
-            </td>
+            <td>Popo</td>
+            <td>ID-123812323</td>
+            <td>098-257-1234</td>
+            <td>Ploy@gmail.com</td>
           </tr>
           <!-- 2 -->
           <tr>
             <td><div class="profile-pic-placeholder"></div></td>
-            <td>
-                Popo
-            </td>
-            <td>
-                ID-123812323
-            </td>
-            <td>
-              098-257-1234
-            </td>
-            <td>
-              Ploy@gmail.com
-            </td>
+            <td>Popo</td>
+            <td>ID-123812323</td>
+            <td>098-257-1234</td>
+            <td>Ploy@gmail.com</td>
           </tr>
           <!-- 3 -->
           <tr>
             <td><div class="profile-pic-placeholder"></div></td>
-            <td>
-                Popo
-            </td>
-            <td>
-                ID-123812323
-            </td>
-            <td>
-              098-257-1234
-            </td>
-            <td>
-              Ploy@gmail.com
-            </td>
+            <td>Popo</td>
+            <td>ID-123812323</td>
+            <td>098-257-1234</td>
+            <td>Ploy@gmail.com</td>
           </tr>
           <!-- 4 -->
           <tr>
             <td><div class="profile-pic-placeholder"></div></td>
-            <td>
-                Popo
-            </td>
-            <td>
-                ID-123812323
-            </td>
-            <td>
-              098-257-1234
-            </td>
-            <td>
-              Ploy@gmail.com
-            </td>
+            <td>Popo</td>
+            <td>ID-123812323</td>
+            <td>098-257-1234</td>
+            <td>Ploy@gmail.com</td>
           </tr>
-        </div>
+        </table>
       </main>
     </section>
+
+    <!-- Drawer -->
+    <div class="drawer" id="drawer">
+      <div class="drawer-header">
+        <p>ADD</p>
+        <i class="fa-solid fa-xmark" onclick="toggleDrawer()"></i>
+      </div>
+    </div>
   </body>
 </html>

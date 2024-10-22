@@ -11,19 +11,6 @@ section {
 main {
   width: 100%;
   padding-top: 36px;
-
-  #add-new-admin {
-    margin-left: auto;
-    width: fit-content;
-    display: flex;
-    gap: 8px;
-    margin-right: 20px;
-    span {
-      font-size: 18px;
-      font-family: Cinzel;
-      font-weight: 400;
-    }
-  }
 }
 
 #admin-table {
@@ -55,6 +42,24 @@ main {
 
   tr:hover {
     background-color: #a7a6a6;
+
+    .profile-pic-placeholder {
+      background-color: #ffffff;
+    }
+  }
+}
+
+#add-new-admin {
+  margin-left: auto;
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  margin-right: 20px;
+  span {
+    font-size: 18px;
+    font-family: Cinzel;
+    font-weight: 400;
   }
 }
 
@@ -64,4 +69,40 @@ main {
   background-color: #ccc;
   border-radius: 50%;
   margin-left: 16px;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -600px;
+  width: 600px;
+  height: 100%;
+  background-color: #e5e5e5;
+  box-shadow: unset;
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    border-bottom: 1px solid #000;
+    padding: 35px 30px 0;
+    font-size: 32px;
+
+    p {
+      margin: 0;
+      font-family: Cinzel;
+    }
+
+    i {
+      cursor: pointer;
+    }
+  }
+}
+
+.drawer.open {
+  box-shadow: -4px 32px 64px 10px rgba(0, 0, 0, 0.25);
+  right: 0;
 }
