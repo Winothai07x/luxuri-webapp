@@ -1,12 +1,10 @@
+@import url("../reusable/font.css");
+
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
   position: relative;
 }
 
@@ -21,7 +19,7 @@ body {
 }
 
 #bg-triangle {
-  background-image: url("../media/images/bg.svg");
+  background-image: url("/media/images/bg.svg");
   background-size: cover;
   background-repeat: no-repeat;
   right: 0;
