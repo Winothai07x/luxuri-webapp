@@ -4,8 +4,8 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: #f0f0f0;
   position: relative;
+  background-color: #f0f0f0;
 }
 
 .container {

@@ -1,0 +1,29 @@
+.left-navbar {
+  width: 250px;
+  background-color: #d9d9d9;
+  height: 100%;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  ul a {
+    padding: 18px;
+    background-color: #c5c2c2;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Cinzel;
+    font-weight: 400;
+    color: #000;
+  }
+
+  ul a.active {
+    background-color: #a7a6a6;
+  }
+}
