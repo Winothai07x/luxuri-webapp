@@ -1,5 +1,5 @@
 // login.html
-function toggleDrawer() {
-  const drawer = document.getElementById("drawer");
+function toggleDrawer(id) {
+  const drawer = document.getElementById(id);
   drawer.classList.toggle("open");
 }

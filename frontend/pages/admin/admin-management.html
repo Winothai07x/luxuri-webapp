@@ -19,7 +19,7 @@
     <section>
       <div id="left-navbar-placeholder"></div>
       <main>
-        <div id="add-new-admin" onclick="toggleDrawer()">
+        <div id="add-new-admin" onclick="toggleDrawer('add-new-admin-drawer')">
           <img src="../../media/images/plus.svg" width="45px" height="45px" />
           <span
             >ADD NEW <br />
@@ -70,11 +70,14 @@
       </main>
     </section>
 
-    <!-- Drawer -->
-    <div class="drawer" id="drawer">
+    <!-- Add new admin drawer -->
+    <div class="drawer" id="add-new-admin-drawer">
       <div class="drawer-header">
         <p>ADD</p>
-        <i class="fa-solid fa-xmark" onclick="toggleDrawer()"></i>
+        <i
+          class="fa-solid fa-xmark"
+          onclick="toggleDrawer('add-new-admin-drawer')"
+        ></i>
       </div>
       <div class="form-container">
         <form id="admin-form">
