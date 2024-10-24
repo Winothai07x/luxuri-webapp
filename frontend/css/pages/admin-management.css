@@ -110,7 +110,7 @@ main {
 .form-container {
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
+  width: 500px;
 }
 
 .form-group {
@@ -135,13 +135,22 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
 }
 
-.picture-placeholder {
+.preview {
   width: 120px;
   height: 100px;
   background-color: #ccc;
   border: 1px solid #aaa;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .browse-btn {
