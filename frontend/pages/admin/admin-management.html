@@ -82,7 +82,7 @@
     <div class="drawer" id="admin-drawer">
       <div class="drawer-header">
         <p id="drawer-title">ADD</p>
-        <i class="fa-solid fa-xmark" onclick="toggleDrawer('admin-drawer')"></i>
+        <i class="fa-solid fa-xmark" onclick="closeAdminDrawer()"></i>
       </div>
 
       <div class="form-container">
@@ -111,12 +111,7 @@
           <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required />
-            <button
-              type="button"
-              id="togglePassword"
-              class="toggle-password"
-              onclick="togglePassword()"
-            >
+            <button type="button" id="togglePassword" class="toggle-password">
               <i class="fa-regular fa-eye"></i>
             </button>
           </div>
@@ -133,9 +128,39 @@
 
           <div class="button-container">
             <button type="submit" id="submit-btn">SAVE</button>
-            <button type="reset">DELETE</button>
+            <button id="delete-btn" onclick="showDeleteConfirmation()">
+              DELETE
+            </button>
           </div>
         </form>
+      </div>
+
+      <!-- Hidden delete confirmation within the drawer -->
+      <div
+        id="delete-confirmation"
+        class="delete-confirmation"
+        style="display: none"
+      >
+        <h2>
+          Do you want to <br />
+          remove this Admin?
+        </h2>
+        <div class="modal-buttons">
+          <button
+            id="confirmDelete"
+            class="modal-btn"
+            onclick="confirmDelete()"
+          >
+            Sure
+          </button>
+          <button
+            id="cancelDelete"
+            class="modal-btn"
+            onclick="hideDeleteConfirmation()"
+          >
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   </body>

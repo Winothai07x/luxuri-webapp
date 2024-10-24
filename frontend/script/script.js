@@ -3,6 +3,13 @@ function toggleDrawer(id) {
   drawer.classList.toggle("open");
 }
 
+function closeDrawer(id) {
+  const drawer = document.getElementById(id);
+  if (drawer.classList.contains("open")) {
+    drawer.classList.remove("open");
+  }
+}
+
 // admin-management.html
 const imageInput = document.getElementById("admin-image-input");
 const preview = document.getElementById("admin-preview");
@@ -28,11 +35,13 @@ imageInput.addEventListener("change", function (event) {
 function openAdminDrawer(mode, adminData = null) {
   const drawerTitle = document.getElementById("drawer-title");
   const submitBtn = document.getElementById("submit-btn");
+  const deleteBtn = document.getElementById("delete-btn");
 
   if (mode === "edit") {
     // Change title and button text for edit mode
     drawerTitle.textContent = "EDIT";
     submitBtn.textContent = "UPDATE";
+    deleteBtn.style.display = "block";
 
     // Pre-populate form fields with admin data
     document.getElementById("admin-id").value = adminData.adminId;
@@ -44,12 +53,36 @@ function openAdminDrawer(mode, adminData = null) {
     // Change title and button text for add mode
     drawerTitle.textContent = "ADD";
     submitBtn.textContent = "SAVE";
+    deleteBtn.style.display = "none";
 
     // Clear form fields
     document.getElementById("admin-form").reset();
   }
 
   toggleDrawer("admin-drawer");
+}
+
+function showDeleteConfirmation() {
+  // Hide the form and show the delete confirmation
+  document.getElementById("admin-form").style.display = "none";
+  document.getElementById("delete-confirmation").style.display = "flex";
+}
+
+function hideDeleteConfirmation() {
+  // Show the form and hide the delete confirmation
+  document.getElementById("admin-form").style.display = "block";
+  document.getElementById("delete-confirmation").style.display = "none";
+}
+
+function confirmDelete() {
+  // Logic for confirming the deletion of the admin
+  console.log("Admin Deleted");
+  closeAdminDrawer();
+}
+
+function closeAdminDrawer() {
+  closeDrawer("admin-drawer");
+  hideDeleteConfirmation();
 }
 
 // add new admin
