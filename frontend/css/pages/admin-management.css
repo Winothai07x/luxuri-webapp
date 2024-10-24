@@ -107,6 +107,7 @@ main {
   right: 0;
 }
 
+/* form in drawer */
 .form-container {
   padding: 20px;
   border-radius: 10px;
@@ -202,5 +203,103 @@ button {
 
   .modal-buttons {
     margin-top: 32px;
+  }
+}
+
+@media (max-width: 800px) {
+  main {
+    padding-top: 4px;
+  }
+
+  #add-new-admin {
+    margin-left: auto;
+    width: fit-content;
+    cursor: pointer;
+    display: flex;
+    gap: 2px;
+    margin-right: 4px;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+
+    span {
+      font-size: 10px;
+      font-family: Inter;
+      font-weight: 400;
+    }
+  }
+
+  #admin-table {
+    border-collapse: collapse;
+    margin-top: 4px;
+    width: 100%;
+    font-family: Inter;
+
+    #table-head-row {
+      background-color: #e8e8e8;
+      box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.1);
+
+      th {
+        font-weight: 400;
+        font-size: 10px;
+        padding: 12px 0;
+        text-align: left;
+      }
+    }
+
+    td {
+      padding: 12px 0;
+      font-size: 10px;
+    }
+  }
+
+  .profile-pic-placeholder {
+    width: 25px;
+    height: 25px;
+    margin-left: 4px;
+  }
+
+  .drawer {
+    width: 90%;
+
+    .drawer-header {
+      padding: 25px 20px 0;
+      font-size: 20px;
+    }
+  }
+
+  /* form in drawer */
+  .form-container {
+    padding: 20px;
+    border-radius: 10px;
+    width: auto;
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    width: 80px;
+    font-family: Inter;
+  }
+
+  .preview {
+    min-width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
