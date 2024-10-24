@@ -4,25 +4,204 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Management</title>
+    <!-- Font awesome Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="../../css/pages/product-management.css" />
     <script src="../../script/navbar.js"></script>
     <script src="../../script/left-navbar.js"></script>
+    <script src="../../script/script.js"></script>
   </head>
   <body>
     <div id="navbar-placeholder"></div>
     <section>
       <div id="left-navbar-placeholder"></div>
       <main>
-        <div id="add-new-product">
+        <div id="add-new-product" onclick="openProductDrawer('add')">
           <img src="../../media/images/plus.svg" width="45px" height="45px" />
           <span
             >ADD NEW <br />
             PRODUCT</span
           >
         </div>
-        <!-- TODO -->
-        <div id="do-here">DO HERE FOR PRODUCT</div>
+
+        <!-- Search bar and category filter -->
+        <div class="search-filter-bar">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search by product name or vendor"
+          />
+
+          <select id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="home-appliances">Home Appliances</option>
+          </select>
+        </div>
+
+        <table id="product-table">
+          <!-- 1 -->
+          <tr
+            onclick="openProductDrawer('edit', {productId: 'P12345', name: 'RingX', material: 'Metal', color: 'Silver', category: 'Ring', price: '999.99', vendor: 'Luxe', description: 'High-end Ring'})"
+          >
+            <td><div class="product-pic-placeholder"></div></td>
+            <td>
+              <p class="title">Product Name</p>
+              <p>Ring</p>
+            </td>
+            <td>
+              <p class="title">Company</p>
+              <p>Luxe</p>
+            </td>
+            <td>
+              <p class="title">Price</p>
+              <p>$ 999.99</p>
+            </td>
+            <td>
+              <p class="title">Marketplace</p>
+              <p>BKK, TH</p>
+            </td>
+          </tr>
+          <!-- 2 -->
+          <tr
+            onclick="openProductDrawer('edit', {productId: 'P67890', name: 'Good', material: 'Gold', color: 'Gold', category: 'Bracelet', price: '9999.99', vendor: 'Prada', description: 'Comfortable bracelet'})"
+          >
+            <td><div class="product-pic-placeholder"></div></td>
+            <td>
+              <p class="title">Product Name</p>
+              <p>Good</p>
+            </td>
+            <td>
+              <p class="title">Company</p>
+              <p>Prada</p>
+            </td>
+            <td>
+              <p class="title">Price</p>
+              <p>$ 9999.99</p>
+            </td>
+            <td>
+              <p class="title">Marketplace</p>
+              <p>BKK, TH</p>
+            </td>
+          </tr>
+          <!-- 3 -->
+          <tr
+            onclick="openProductDrawer('edit', {productId: 'P67891', name: 'XYZ', material: 'Titanium', color: 'Sliver', category: 'Necklet', price: '9999.99', vendor: 'XYZ', description: 'ajsdj'})"
+          >
+            <td><div class="product-pic-placeholder"></div></td>
+            <td>
+              <p class="title">Product Name</p>
+              <p>XYZ</p>
+            </td>
+            <td>
+              <p class="title">Company</p>
+              <p>XXX</p>
+            </td>
+            <td>
+              <p class="title">Price</p>
+              <p>$ 9999.99</p>
+            </td>
+            <td>
+              <p class="title">Marketplace</p>
+              <p>BKK, TH</p>
+            </td>
+          </tr>
+        </table>
       </main>
     </section>
+
+    <!-- Product Drawer -->
+    <div class="drawer" id="product-drawer">
+      <div class="drawer-header">
+        <p id="drawer-title">ADD</p>
+        <i
+          class="fa-solid fa-xmark"
+          onclick="closeDrawerAndReset('product')"
+        ></i>
+      </div>
+
+      <div class="form-container">
+        <form id="product-form">
+          <div class="form-group">
+            <label for="product-id">Product ID:</label>
+            <input type="text" id="product-id" name="productId" required />
+          </div>
+
+          <div class="form-group">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="material">Material:</label>
+            <input type="text" id="material" name="material" required />
+          </div>
+
+          <div class="form-group">
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required />
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required />
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" step="0.01" id="price" name="price" required />
+          </div>
+
+          <div class="form-group">
+            <label for="vendor">Vendor:</label>
+            <input type="text" id="vendor" name="vendor" required />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+          </div>
+
+          <div class="button-container">
+            <button type="submit" id="submit-btn">SAVE</button>
+            <button id="delete-btn" onclick="showDeleteConfirmation()">
+              DELETE
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Hidden delete confirmation within the drawer -->
+      <div
+        id="delete-confirmation"
+        class="delete-confirmation"
+        style="display: none"
+      >
+        <h2>
+          Do you want to <br />
+          remove this Product?
+        </h2>
+        <div class="modal-buttons">
+          <button
+            id="confirmDelete"
+            class="modal-btn"
+            onclick="confirmDelete()"
+          >
+            Sure
+          </button>
+          <button
+            id="cancelDelete"
+            class="modal-btn"
+            onclick="hideDeleteConfirmation()"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

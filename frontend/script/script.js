@@ -32,60 +32,91 @@ imageInput.addEventListener("change", function (event) {
   }
 });
 
-function openAdminDrawer(mode, adminData = null) {
+function openDrawer(entityType, mode, entityData = null) {
   const drawerTitle = document.getElementById("drawer-title");
   const submitBtn = document.getElementById("submit-btn");
   const deleteBtn = document.getElementById("delete-btn");
 
-  if (mode === "edit") {
-    // Change title and button text for edit mode
-    drawerTitle.textContent = "EDIT";
-    submitBtn.textContent = "UPDATE";
-    deleteBtn.style.display = "block";
+  if (entityType === "admin") {
+    if (mode === "edit") {
+      drawerTitle.textContent = "EDIT ADMIN";
+      submitBtn.textContent = "UPDATE";
+      deleteBtn.style.display = "block";
 
-    // Pre-populate form fields with admin data
-    document.getElementById("admin-id").value = adminData.adminId;
-    document.getElementById("name").value = adminData.name;
-    document.getElementById("email").value = adminData.email;
-    document.getElementById("tel").value = adminData.tel;
-    // Handle other fields like password or picture if necessary
-  } else {
-    // Change title and button text for add mode
-    drawerTitle.textContent = "ADD";
-    submitBtn.textContent = "SAVE";
-    deleteBtn.style.display = "none";
+      // Pre-populate form fields with admin data
+      document.getElementById("admin-id").value = entityData.adminId;
+      document.getElementById("name").value = entityData.name;
+      document.getElementById("email").value = entityData.email;
+      document.getElementById("tel").value = entityData.tel;
+      // Handle other fields like password or picture if necessary
+    } else {
+      drawerTitle.textContent = "ADD ADMIN";
+      submitBtn.textContent = "SAVE";
+      deleteBtn.style.display = "none";
 
-    // Clear form fields
-    document.getElementById("admin-form").reset();
+      // Clear form fields
+      document.getElementById("admin-form").reset();
+    }
+  } else if (entityType === "product") {
+    if (mode === "edit") {
+      drawerTitle.textContent = "EDIT PRODUCT";
+      submitBtn.textContent = "UPDATE";
+      deleteBtn.style.display = "block";
+
+      // Pre-populate form fields with product data
+      document.getElementById("product-id").value = entityData.productId;
+      document.getElementById("product-name").value = entityData.name;
+      document.getElementById("price").value = entityData.price;
+      document.getElementById("category").value = entityData.category;
+      document.getElementById("description").value = entityData.description;
+      // Handle other fields like images, vendor, etc., if necessary
+    } else {
+      drawerTitle.textContent = "ADD PRODUCT";
+      submitBtn.textContent = "SAVE";
+      deleteBtn.style.display = "none";
+
+      // Clear form fields
+      document.getElementById("product-form").reset();
+    }
   }
 
-  toggleDrawer("admin-drawer");
+  toggleDrawer(`${entityType}-drawer`);
 }
 
-function showDeleteConfirmation() {
-  // Hide the form and show the delete confirmation
-  document.getElementById("admin-form").style.display = "none";
+function showDeleteConfirmation(entityType) {
+  document.getElementById(`${entityType}-form`).style.display = "none";
   document.getElementById("delete-confirmation").style.display = "flex";
 }
 
-function hideDeleteConfirmation() {
-  // Show the form and hide the delete confirmation
-  document.getElementById("admin-form").style.display = "block";
+function hideDeleteConfirmation(entityType) {
+  document.getElementById(`${entityType}-form`).style.display = "block";
   document.getElementById("delete-confirmation").style.display = "none";
 }
 
-function confirmDelete() {
-  // Logic for confirming the deletion of the admin
-  console.log("Admin Deleted");
-  closeAdminDrawer();
+function confirmDelete(entityType, entityId) {
+  console.log(
+    `${
+      entityType.charAt(0).toUpperCase() + entityType.slice(1)
+    } Deleted: ${entityId}`
+  );
+  closeDrawerAndReset(entityType);
 }
 
-function closeAdminDrawer() {
-  closeDrawer("admin-drawer");
-  hideDeleteConfirmation();
+function closeDrawerAndReset(entityType) {
+  closeDrawer(`${entityType}-drawer`);
+  hideDeleteConfirmation(entityType);
 }
 
-// add new admin
+// For using
+function openAdminDrawer(mode, data) {
+  openDrawer("admin", mode, data);
+}
+
+function openProductDrawer(mode, data) {
+  openDrawer("product", mode, data);
+}
+
+// Add or Update Admin
 document
   .getElementById("admin-form")
   .addEventListener("submit", function (event) {
@@ -105,9 +136,34 @@ document
       tel,
     };
 
-    console.log(formData);
-    // TODO: add post here
+    console.log("Admin Form Data: ", formData);
+    // TODO: Submit form data to backend
 
-    // close drawer
-    toggleDrawer("add-new-admin-drawer");
+    closeDrawer("admin");
+  });
+
+// Add or Update Product
+document
+  .getElementById("product-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const productId = document.getElementById("product-id").value;
+    const name = document.getElementById("product-name").value;
+    const price = document.getElementById("price").value;
+    const category = document.getElementById("category").value;
+    const description = document.getElementById("description").value;
+
+    const productData = {
+      productId,
+      name,
+      price,
+      category,
+      description,
+    };
+
+    console.log("Product Form Data: ", productData);
+    // TODO: Submit product data to backend
+
+    closeDrawer("product");
   });
