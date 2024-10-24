@@ -1,4 +1,3 @@
-// login.html
 function toggleDrawer(id) {
   const drawer = document.getElementById(id);
   drawer.classList.toggle("open");
@@ -25,6 +24,33 @@ imageInput.addEventListener("change", function (event) {
     preview.innerHTML = "";
   }
 });
+
+function openAdminDrawer(mode, adminData = null) {
+  const drawerTitle = document.getElementById("drawer-title");
+  const submitBtn = document.getElementById("submit-btn");
+
+  if (mode === "edit") {
+    // Change title and button text for edit mode
+    drawerTitle.textContent = "EDIT";
+    submitBtn.textContent = "UPDATE";
+
+    // Pre-populate form fields with admin data
+    document.getElementById("admin-id").value = adminData.adminId;
+    document.getElementById("name").value = adminData.name;
+    document.getElementById("email").value = adminData.email;
+    document.getElementById("tel").value = adminData.tel;
+    // Handle other fields like password or picture if necessary
+  } else {
+    // Change title and button text for add mode
+    drawerTitle.textContent = "ADD";
+    submitBtn.textContent = "SAVE";
+
+    // Clear form fields
+    document.getElementById("admin-form").reset();
+  }
+
+  toggleDrawer("admin-drawer");
+}
 
 // add new admin
 document

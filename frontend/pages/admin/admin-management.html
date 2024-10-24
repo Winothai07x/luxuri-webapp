@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="../../css/pages/admin-management.css" />
     <script src="../../script/navbar.js"></script>
     <script src="../../script/left-navbar.js"></script>
+    <script src="../../script/script.js"></script>
   </head>
   <body>
     <div id="navbar-placeholder"></div>
     <section>
       <div id="left-navbar-placeholder"></div>
       <main>
-        <div id="add-new-admin" onclick="toggleDrawer('add-new-admin-drawer')">
+        <div id="add-new-admin" onclick="openAdminDrawer('add')">
           <img src="../../media/images/plus.svg" width="45px" height="45px" />
           <span
             >ADD NEW <br />
@@ -34,7 +35,9 @@
             <th>Email</th>
           </tr>
           <!-- 1 -->
-          <tr>
+          <tr
+            onclick="openAdminDrawer('edit', {adminId: 'ID-123812323', name: 'Popo', email: 'Ploy@gmail.com', tel: '098-257-1234' })"
+          >
             <td><div class="profile-pic-placeholder"></div></td>
             <td>Popo</td>
             <td>ID-123812323</td>
@@ -42,7 +45,9 @@
             <td>Ploy@gmail.com</td>
           </tr>
           <!-- 2 -->
-          <tr>
+          <tr
+            onclick="openAdminDrawer('edit', {adminId: 'ID-123812323', name: 'Popo', email: 'Ploy@gmail.com', tel: '098-257-1234' })"
+          >
             <td><div class="profile-pic-placeholder"></div></td>
             <td>Popo</td>
             <td>ID-123812323</td>
@@ -50,15 +55,19 @@
             <td>Ploy@gmail.com</td>
           </tr>
           <!-- 3 -->
-          <tr>
+          <tr
+            onclick="openAdminDrawer('edit', {adminId: 'ID-999999', name: 'Popo', email: 'Ploy@gmail.com', tel: '098-257-1234' })"
+          >
             <td><div class="profile-pic-placeholder"></div></td>
             <td>Popo</td>
-            <td>ID-123812323</td>
+            <td>ID-999999</td>
             <td>098-257-1234</td>
             <td>Ploy@gmail.com</td>
           </tr>
           <!-- 4 -->
-          <tr>
+          <tr
+            onclick="openAdminDrawer('edit', {adminId: 'ID-123812323', name: 'Popo', email: 'Ploy@gmail.com', tel: '098-257-1234' })"
+          >
             <td><div class="profile-pic-placeholder"></div></td>
             <td>Popo</td>
             <td>ID-123812323</td>
@@ -69,15 +78,13 @@
       </main>
     </section>
 
-    <!-- Add new admin drawer -->
-    <div class="drawer" id="add-new-admin-drawer">
+    <!-- Admin Drawer -->
+    <div class="drawer" id="admin-drawer">
       <div class="drawer-header">
-        <p>ADD</p>
-        <i
-          class="fa-solid fa-xmark"
-          onclick="toggleDrawer('add-new-admin-drawer')"
-        ></i>
+        <p id="drawer-title">ADD</p>
+        <i class="fa-solid fa-xmark" onclick="toggleDrawer('admin-drawer')"></i>
       </div>
+
       <div class="form-container">
         <form id="admin-form">
           <div class="form-group picture-group">
@@ -125,12 +132,11 @@
           </div>
 
           <div class="button-container">
-            <button type="submit">SAVE</button>
+            <button type="submit" id="submit-btn">SAVE</button>
             <button type="reset">DELETE</button>
           </div>
         </form>
       </div>
     </div>
-    <script src="../../script/script.js"></script>
   </body>
 </html>
