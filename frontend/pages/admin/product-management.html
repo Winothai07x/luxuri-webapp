@@ -168,7 +168,7 @@
 
           <div class="button-container">
             <button type="submit" id="submit-btn">SAVE</button>
-            <button id="delete-btn" onclick="showDeleteConfirmation()">
+            <button id="delete-btn" onclick="showDeleteConfirmation('product')">
               DELETE
             </button>
           </div>
@@ -189,14 +189,14 @@
           <button
             id="confirmDelete"
             class="modal-btn"
-            onclick="confirmDelete()"
+            onclick="confirmDelete('product', '12931293')"
           >
             Sure
           </button>
           <button
             id="cancelDelete"
             class="modal-btn"
-            onclick="hideDeleteConfirmation()"
+            onclick="hideDeleteConfirmation('product')"
           >
             Cancel
           </button>

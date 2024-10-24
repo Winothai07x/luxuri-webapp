@@ -94,11 +94,7 @@ function hideDeleteConfirmation(entityType) {
 }
 
 function confirmDelete(entityType, entityId) {
-  console.log(
-    `${
-      entityType.charAt(0).toUpperCase() + entityType.slice(1)
-    } Deleted: ${entityId}`
-  );
+  console.log(`${entityType} Deleted: ${entityId}`);
   closeDrawerAndReset(entityType);
 }
 
