@@ -15,10 +15,14 @@
     <script src="../../script/script.js"></script>
   </head>
   <body>
+    <!-- Navbar โหลดมาจาก navbar.html เพื่อลดการใช้ซ้ำ -->
     <div id="navbar-placeholder"></div>
     <section>
+      <!-- Left Navbar โหลดมาจาก left-navbar.html เพื่อลดการใช้ซ้ำ -->
       <div id="left-navbar-placeholder"></div>
+
       <main>
+        <!-- ปุ่ม add new admin กดแล้วจะslide มาจากทางขวา -->
         <div id="add-new-admin" onclick="openAdminDrawer('add')">
           <img src="../../media/images/plus.svg" width="45px" height="45px" />
           <span
@@ -26,6 +30,9 @@
             ADMIN</span
           >
         </div>
+
+        <!-- ตารางแสดงข้อมูล admin ทั้งหมด -->
+        <!-- ควรใช้ชื่อเราจริงๆเลยไหม -->
         <table id="admin-table">
           <tr id="table-head-row">
             <th></th>
@@ -78,7 +85,7 @@
       </main>
     </section>
 
-    <!-- Admin Drawer -->
+    <!-- slide มาจากทางขวา -->
     <div class="drawer" id="admin-drawer">
       <div class="drawer-header">
         <p id="drawer-title">ADD</p>
@@ -87,6 +94,7 @@
 
       <div class="form-container">
         <form id="admin-form">
+          <!-- ใส่รูปภาพได้ แต่เราคิดว่าใส่เป็น link ไปดีกว่า -->
           <div class="form-group picture-group">
             <label for="picture">Picture:</label>
             <div class="preview" id="admin-preview"></div>
@@ -136,6 +144,7 @@
       </div>
 
       <!-- Hidden delete confirmation within the drawer -->
+      <!-- อันนี้คือหน้า delete confirmation ของ admin ถูกควบคุมด้วย function showDeleteConfirmation -->
       <div
         id="delete-confirmation"
         class="delete-confirmation"

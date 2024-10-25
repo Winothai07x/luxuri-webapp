@@ -32,6 +32,7 @@ imageInput.addEventListener("change", function (event) {
   }
 });
 
+// function ไว้สำหรับ slide ทั้ง add และ edit ใน admin และ product
 function openDrawer(entityType, mode, entityData = null) {
   const drawerTitle = document.getElementById("drawer-title");
   const submitBtn = document.getElementById("submit-btn");

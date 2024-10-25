@@ -15,10 +15,13 @@
     <script src="../../script/script.js"></script>
   </head>
   <body>
+    <!-- Navbar โหลดมาจาก navbar.html เพื่อลดการใช้ซ้ำ -->
     <div id="navbar-placeholder"></div>
     <section>
+      <!-- Left Navbar โหลดมาจาก left-navbar.html เพื่อลดการใช้ซ้ำ -->
       <div id="left-navbar-placeholder"></div>
       <main>
+        <!-- ปุ่ม add new admin กดแล้วจะslide มาจากทางขวา -->
         <div id="add-new-product" onclick="openProductDrawer('add')">
           <img src="../../media/images/plus.svg" width="45px" height="45px" />
           <span
@@ -43,6 +46,7 @@
           </select>
         </div>
 
+        <!-- ตารางแสดงข้อมูล products ทั้งหมด -->
         <table id="product-table">
           <!-- 1 -->
           <tr
@@ -114,7 +118,7 @@
       </main>
     </section>
 
-    <!-- Product Drawer -->
+    <!-- slide มาจากทางขวา -->
     <div class="drawer" id="product-drawer">
       <div class="drawer-header">
         <p id="drawer-title">ADD</p>
@@ -176,6 +180,7 @@
       </div>
 
       <!-- Hidden delete confirmation within the drawer -->
+      <!-- อันนี้คือหน้า delete confirmation ของ product ถูกควบคุมด้วย function showDeleteConfirmation -->
       <div
         id="delete-confirmation"
         class="delete-confirmation"
